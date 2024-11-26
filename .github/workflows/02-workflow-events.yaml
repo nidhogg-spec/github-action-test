@@ -4,6 +4,7 @@ on:
   # pull_request:
   # schedule:
   #   - cron: '0 0 * * *'  # This will trigger the workflow every day at midnight
+  # comentario
   workflow_dispatch:  # Manual trigger from the GitHub UI
 
 jobs:
