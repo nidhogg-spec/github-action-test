@@ -1,9 +1,15 @@
 name: 02 - Workflow Events
-on: push
+on: 
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 0 * * *'  # This will trigger the workflow every day at midnight
+  workflow_dispatch:  # Manual trigger from the GitHub UI
 
 jobs:
   echo:
     runs-on: ubuntu-latest
     steps:
       - name: "Show the trigger"
-        run: echo "$GITHUB_WORKFLOW"
+        run: |
+          echo "Event name: ${{ github.event_name }}"
