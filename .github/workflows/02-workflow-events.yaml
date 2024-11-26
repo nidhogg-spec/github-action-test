@@ -1,6 +1,5 @@
 name: 02 - Workflow Events
 on: 
-  push:
   pull_request:
   schedule:
     - cron: '0 0 * * *'  # This will trigger the workflow every day at midnight
