@@ -8,9 +8,15 @@ on:
                 type: boolean
                 default: false
     push:
+env:
+    MY_WORKFLOW_VAR: "This is a secret"
+    MY_OVERWRITTEN_VAR: "This is a secret"
 jobs:
     echo-data:
         runs-on: ubuntu-latest
+        env:
+            MY_JOB_VAR: "job"
+            MY_OVERWRITTEN_VAR: "job"
         steps:
             - name: Display-information
               run: |
@@ -24,4 +30,13 @@ jobs:
                     echo "GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER"
             - name: Retrieve Variable
               run: echo "The value of the variable is ${{ vars.MY_VAR }}"
-            
+            - name: print Environment Variable
+              env:
+                MY_OVERWRITTEN_VAR: "step"
+              run: |
+                echo "Workflow env: ${{ env.MY_WORKFLOW_VAR }}"
+                echo "Overwritten env: ${{ env.MY_OVERWRITTEN_VAR }}"
+            - name: print Environment Variable
+              run: |
+                  echo "Workflow env: ${{ env.MY_WORKFLOW_VAR }}"
+                  echo "Overwritten env: ${{ env.MY_OVERWRITTEN_VAR }}"
