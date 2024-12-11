@@ -5,8 +5,8 @@ on:
         inputs:
             debug:
                 description: 'Debug mode'
-                required: false
-                default: 'false'
+                type: boolean
+                default: false
     push:
 jobs:
     echo-data:
