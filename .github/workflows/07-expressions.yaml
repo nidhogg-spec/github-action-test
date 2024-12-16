@@ -14,7 +14,7 @@ jobs:
       - name: '[debug] Print start-up data'
         if: ${{ github.event.inputs.debug }}
         run: |
-          echo "Triggered by: $GITHUB_EVENT_NAME"
+          echo "Triggered by: ${{ github.event_name }}"
           echo "Branch: $GITHUB_REF"
           echo "SHA: $GITHUB_SHA"
           echo "OS: $RUNNER_OS"
