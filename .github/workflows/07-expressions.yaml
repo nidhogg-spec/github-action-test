@@ -1,5 +1,5 @@
 name: 07 - Using Expresssion
-on:
+run-name: 07 - Using Expresssion
     push:
     workflow_dispatch:
         inputs:
