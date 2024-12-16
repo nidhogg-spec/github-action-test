@@ -6,8 +6,8 @@ env:
   OVERWRITTEN: "I have been overwritten at the job level"
 jobs:
   env:
-    WORKFLOW_VAR: "I am a job env var"
-    OVERWRITTEN: "'I have been overwritten at the job level"
+    JOB_VAR: "I am a job env var"
+    OVERWRITTEN: "I have been overwritten at the job level"
   echo:
     runs-on: ubuntu-latest
     steps:  
