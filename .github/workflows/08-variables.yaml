@@ -2,8 +2,8 @@ name: 08 - Using Variables
 on:
   workflow_dispatch:
 env:
-  WORKFLOW_VAR: "I am a job env var"
-  OVERWRITTEN: "I have been overwritten at the job level"
+  WORKFLOW_VAR: "I am a workflow env var"
+  OVERWRITTEN: "I will be overwritten"
 jobs:
   echo:
     runs-on: ubuntu-latest
