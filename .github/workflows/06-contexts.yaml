@@ -7,7 +7,6 @@ on:
                 description: 'Debug mode'
                 type: boolean
                 default: false
-    push:
 env:
     MY_WORKFLOW_VAR: "This is a secret"
     MY_OVERWRITTEN_VAR: "This is a secret"
