@@ -1,25 +1,25 @@
-name: 07 - Using Expresssion
+name: 07 - Using Expression
 on:
   push:
   workflow_dispatch:
-      inputs:
-          debug:
-              description: 'Debug mode'
-              type: boolean
-              default: false
+    inputs:
+      debug:
+        description: 'Debug mode'
+        type: boolean
+        default: false
 jobs:
   echo:
-      runs-on: ubuntu-latest
-      steps:
-          - name: [debug] Print start-up data
-            if: ${{ github.event.inputs.debug == true }}
-            run: |
-                echo "Triggered by: $GITHUB_EVENT_NAME"
-                echo "Branch: $GITHUB_REF"
-                echo "SHA: $GITHUB_SHA"
-                echo "OS: $RUNNER_OS"
-          - name: [debug] Print when triggered from main
-            if: ${{ github.ref == 'refs/heads/main' && github.event.inputs.debug == true }}
-            run: echo "I was triggered from main"
-          - name: Greeting
-            run: echo "Hello, $GITHUB_ACTOR"
+    runs-on: ubuntu-latest
+    steps:
+      - name: [debug] Print start-up data
+        if: ${{ github.event.inputs.debug == true }}
+        run: |
+          echo "Triggered by: $GITHUB_EVENT_NAME"
+          echo "Branch: $GITHUB_REF"
+          echo "SHA: $GITHUB_SHA"
+          echo "OS: $RUNNER_OS"
+      - name: [debug] Print when triggered from main
+        if: ${{ github.ref == 'refs/heads/main' && github.event.inputs.debug == true }}
+        run: echo "I was triggered from main"
+      - name: Greeting
+        run: echo "Hello, $GITHUB_ACTOR"
