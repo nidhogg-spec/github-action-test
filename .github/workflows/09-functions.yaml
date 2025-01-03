@@ -14,7 +14,7 @@ jobs:
       run: echo "PR labels are ${{ join(github.event.pull_request.labels.*.name, ', ') }}"
 
     - name: Bug step
-      if: failure() &&  !cancelled() && contains(github.event.pull_request.title, 'fix')
+      if: github.event.action != 'cancelled' && contains(github.event.pull_request.title, 'fix')
       run: echo "This step will only run if the previous step failed"
 
     - name: Sleep for 20 seconds
