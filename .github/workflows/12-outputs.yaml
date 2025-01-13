@@ -22,7 +22,7 @@ jobs:
       run: echo "status=${{ github.event.inputs.build-status }} >> $GITHUB_OUTPUT"
     - name: test
       run: |
-        echo "The value from GITHUB_OUTPUT is: ${{ steps.build.outputs.status }}"
+        echo "The value from GITHUB_OUTPUT is: ${{ steps.Build.outputs.status }}"
   deploy:
     runs-on: ubuntu-latest
     needs: build
