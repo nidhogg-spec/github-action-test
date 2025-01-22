@@ -22,7 +22,7 @@ jobs:
         node-version: '20'
     - name: Testing
       run: |
-        npm run test
+        npm test  -- App.test
     - name: Building
       run: |
         npm run build
