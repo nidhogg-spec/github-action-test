@@ -29,7 +29,7 @@ jobs:
       run: |
         npm run build
     - name: Upload build files
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
           name: app
           path: 14-artifacts/react-app/build
@@ -38,7 +38,7 @@ jobs:
     needs: test-build
     steps:
       - name: Download build artifact
-        uses: actions/dowloada-artifact@v3
+        uses: actions/dowloada-artifact@v4
         with:
           name: app
           path: build
