@@ -38,7 +38,7 @@ jobs:
     needs: test-build
     steps:
       - name: Download build artifact
-        uses: actions/dowloada-artifact@v4
+        uses: actions/dowload-artifact@v4
         with:
           name: app
           path: build
