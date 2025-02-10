@@ -14,9 +14,9 @@ jobs:
           - windows-latest
         include:
           - os: ubuntu-latest
-            node-version: 16
+            node: 16
           - os: ubuntu-latest
-            node-version: 21
+            node: 21
             tag: experimental
 
     runs-on: ${{ matrix.os }}
