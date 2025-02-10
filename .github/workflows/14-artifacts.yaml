@@ -22,7 +22,7 @@ jobs:
         key: deps-node-modules-${{ hashFiles('14-artifacts/package-lock.json') }}
     - name: Install Dependencies
       if: steps.cache.outputs.cache-hit != 'true'
-      run: npm ci
+      run: npm --force ci
     - name: Unit test
       run: npm run test
     - name: Building
